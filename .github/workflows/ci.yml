@@ -4,20 +4,20 @@
 
 name: Java CI
 on: [push]
- jobs:
-  job-name:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uese: jenkinsci/jfr-setup-action@master
-      - uses: jenkinsci/jfr-plugin-installation-action@master
-        with:
-          pluginstxt: plugins.txt
-      - uses: jenkinsci/jfr-runtime-action@master
-        with:
-          command: run
-          jenkinsfile: Jenkinsfile
-          jcasc: jcasc.yml           
+jobs:
+ job-name:
+   runs-on: ubuntu-latest
+   steps:
+     - uses: actions/checkout@v2
+     - uses: jenkinsci/jfr-setup-action@master
+     - uses: jenkinsci/jfr-plugin-installation-action@master
+       with:
+         pluginstxt: plugins.txt
+     - uses: jenkinsci/jfr-runtime-action@master
+       with:
+         command: run
+         jenkinsfile: Jenkinsfile
+         jcasc: jcasc.yml           
 
 
 
